@@ -1,27 +1,12 @@
+// require necessary dependencies and files
 const fs = require('fs');
 const path = require('path');
 const guestsPath = path.join(__dirname, 'guests.json');
 
-function getGuests() {
-  const guestsJSON = fs.readFileSync(guestsPath, 'utf8')
-  return JSON.parse(guestsJSON)
-}
+// Define a synchronous getGuests function here:
 
-function getGuestByID(id) {
-  const guestsJSON = fs.readFileSync(guestsPath, 'utf8')
-  return JSON.parse(guestsJSON)[id]
-}
+// Define a synchronous getGuestsByID function here:
 
-function addGuest(guest) {
-  const guests = getGuests()
-  guests.push(guest);
-  const newGuestsJSON = JSON.stringify(guests)
-  fs.writeFileSync(guestsPath, newGuestsJSON)
-  return guest
-}
+// Define a synchronous addGuest function here:
 
-module.exports = {
-  getGuests,
-  getGuestByID,
-  addGuest
-}
+// Export a synchronous functions using module.exports bellow:

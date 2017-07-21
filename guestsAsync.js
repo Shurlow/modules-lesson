@@ -1,47 +1,12 @@
+// require necessary dependencies and files
 const fs = require('fs');
 const path = require('path');
 const guestsPath = path.join(__dirname, 'guests.json');
 
-function getGuests(cb) {
-  fs.readFile(guestsPath, 'utf8', (err, json) => {
-    if (err) {
-      return cb(err)
-    }
+// Define an asynchronous getGuests function here:
 
-    cb(null, JSON.parse(json))
-  })
-}
+// Define an asynchronous getGuestsByID function here:
 
-function getGuestByID(id, cb) {
-  getGuests((err, guests) => {
-    if (err || id < 0 || id >= guests.length || isNaN(id)) {
-      cb('Error reading guests.')
-    }
-    cb(null, guests[id])
-  })
-}
+// Define an asynchronous addGuest function here:
 
-function addGuest(guest, cb) {
-  getGuests((err, guests) => {
-    if (err) {
-      return cb(err)
-    }
-
-    guests.push(guest)
-    const newGuestsJSON = JSON.stringify(guests)
-
-    fs.writeFile(guestsPath, newGuestsJSON, 'utf8', (err) => {
-      if (err) {
-        return cb(err)
-      }
-      cb(null, guest)
-    })
-
-  })
-}
-
-module.exports = {
-  getGuests,
-  getGuestByID,
-  addGuest
-}
+// Export functions using module.exports bellow:
